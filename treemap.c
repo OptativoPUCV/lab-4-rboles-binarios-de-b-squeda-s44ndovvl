@@ -162,7 +162,14 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree == NULL || tree->root == NULL || tree->current == NULL) return NULL;
 
     if (tree->current->right) tree->current = minimum(tree->current->right);
-    else if(tree->current->parent) tree->current = tree->current->parent;
+    else if(tree->current->parent)
+    { 
+        while(tree->current->parent->right == tree->current)
+        {
+            tree->current = tree->current->parent;
+        }
+        tree->current = tree->current->parent;
+    } 
         /*if(tree->current->parent->left == tree->current)
         {
             if(tree->current->parent->right)
