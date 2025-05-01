@@ -11,3 +11,17 @@ ju.,  1 de may. de 2025  0:21:59:
  tests:  4|7
 total_score: 5/70
 ac9f76f
+ju.,  1 de may. de 2025  0:32:41: 
+ treemap.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'searchTreeMap':
+treemap.c:91:16: error: returning 'TreeNode *' from a function with incompatible return type 'Pair *' [-Wincompatible-pointer-types]
+   91 |     return tree->current;
+      |            ~~~~^~~~~~~~~
+test.c: At top level:
+test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+92f0221
