@@ -161,8 +161,9 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
     if(tree == NULL || tree->root == NULL || tree->current == NULL) return NULL;
 
-    if(tree->current->parent) {
-        if(tree->current->parent->left == tree->current)
+    if (tree->current->right) tree->current = minimum(tree->current->right);
+    else if(tree->current->parent) tree->current = tree->current->parent;
+        /*if(tree->current->parent->left == tree->current)
         {
             if(tree->current->parent->right)
             {
@@ -170,10 +171,7 @@ Pair * nextTreeMap(TreeMap * tree) {
             }
             else tree->current = tree->current->parent;
         }
-        else tree->current->parent->right = NULL;
+        else tree->current->parent->right = NULL;*/
 
-    } 
-    else tree->current = tree->current->right;
-
-    return tree->current->pair;
+    return (tree->current) ? tree->current->pair : NULL;
 }
