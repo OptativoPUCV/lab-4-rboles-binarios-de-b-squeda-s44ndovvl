@@ -51,7 +51,7 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
     Pair *insertar = searchTreeMap(tree, key);
-    if(is_equal(tree, key, insertar->key)) return; //no se inserta si ya existe
+    if(is_equal(tree, key, insertar->key) && insertar != NULL) return; //no se inserta si ya existe
 
     if(tree->lower_than(key, tree->current->pair->key)) 
     {
