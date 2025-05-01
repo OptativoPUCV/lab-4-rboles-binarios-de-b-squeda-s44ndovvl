@@ -159,7 +159,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
             if (tree->current->left == NULL) return tree->current->pair;
             tree->current = tree->current->left;
         } else {
-            if (tree->current->right == NULL) return tree->current->pair;
+            if (tree->current->right == NULL) return nextTreeMap(tree);
             tree->current = tree->current->right;
         }
     }
