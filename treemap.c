@@ -166,7 +166,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     if (tree->current->right) tree->current = minimum(tree->current->right);
     else if(tree->current->parent)
     { 
-        while(tree->current->parent->right == tree->current)
+        while(temp->parent != NULL && tree->current->parent->right == tree->current)
         {
             tree->current = tree->current->parent;
         }
