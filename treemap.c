@@ -101,6 +101,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         } 
         else tree->root = child;
 
+        child->parent = node->parent;
+
         free(node->pair);
         free(node);
     } 
